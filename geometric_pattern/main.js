@@ -9,25 +9,27 @@ function setup() {
 }
 
 function draw() {
-    var isShifted = false;
-    
-    var y = 0;
-    while (y <= height) {
-        var x;
-        
-        if (isShifted) {
-            x = circleRadius;
-        } else {
-            x = 0;
-        }
-        
-        
-        while (x <= width) {
-            ellipse(x, y, circleDiameter, circleDiameter)
-            x = x + circleDiameter;
-        }
-        
-        y = y + circleRadius;
-        isShifted = !isShifted;
+  var isShifted = false;
+
+  var y = height;
+  while (y >= 0) {
+
+    var x;
+
+    if (isShifted) {
+      x = circleRadius;
+    } else {
+      x = 0;
     }
+
+    while (x <= width) {
+        fill(color(225,0,0));
+        stroke(color(0,255,0));
+        ellipse(x, y, circleDiameter, circleDiameter);
+        x = x + circleDiameter;
+    }
+
+    y = y - circleRadius;
+    isShifted = !isShifted;
+  }
 }
