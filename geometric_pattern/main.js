@@ -1,4 +1,4 @@
-var NUM_CIRCLES = 12;
+var NUM_CIRCLES = 30;
 var circleDiameter;
 var circleRadius;
 var rVal;
@@ -7,7 +7,7 @@ var bVal;
 
 
 function setup() {
-  createCanvas(480, 600);
+  createCanvas(1080, 840);
   circleDiameter = width/NUM_CIRCLES;
   circleRadius = circleDiameter/2;
 }
@@ -46,4 +46,12 @@ function draw() {
     gVal = gVal + 7;
     bVal = bVal + 3;
   }
+}
+
+function keyPressed() {
+    if (keyCode === 115 || keyCode === 83) {
+        saveCanvas('geometricPattern', 'png');
+
+    }
+    return false;
 }
